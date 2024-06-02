@@ -1,0 +1,40 @@
+// Create a variable to hold your NFT collection
+let nftCollection = [];
+
+// This function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the array above.
+function mintNFT(name, description, age, address) {
+    const newNFT = {
+        name,
+        description,
+        age,
+        address
+    };
+    nftCollection.push(newNFT);
+}
+
+// Create a "loop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function listNFTs() {
+    nftCollection.forEach((nft, index) => {
+        console.log("NFT " + (index + 1));
+        console.log("Name: " + nft.name);
+        console.log("Description: " + nft.description);
+        console.log("Age: " + nft.age);
+        console.log("Address: " + nft.address);
+    });
+}
+
+// Print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("Total number of NFTs minted: " + nftCollection.length);
+}
+
+// Call your functions below this line
+// Example usage:
+mintNFT("Alice", "Description of NFT 1", 23, "house no. 343, city Ludhiana");
+mintNFT("Bob", "Description of NFT 2", 44, "house no. 432, city Patiala");
+
+listNFTs();
+getTotalSupply();
